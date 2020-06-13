@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.advanced-pie-legend .total-label,
+.advanced-pie-legend .legend-items-container .item-value,
+.advanced-pie-legend .legend-items-container .item-label,
+.advanced-pie-legend .legend-items-container .item-percent {
+    line-height: 32px;
+}

@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['/home']">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/clientes']">Clientes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/contabilidad']">Contabilidad</a>
+            </li>
+            <li>
+                <mat-form-field>
+                    <mat-label>Configuración</mat-label>
+                    <mat-select >
+                        <mat-option (click)="addUser()">Usuarios</mat-option>
+                        <mat-option (click)="addPrice()">Precios</mat-option>
+                        <mat-option (click)="addInfo()">Datos Fiscales</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </li>
+        </ul>
+        <img fxLayoutAlign="center" class="avatar" src='../../assets/power.png' (click)="logout()">
+
+   
+    </div>
+
+</nav>
