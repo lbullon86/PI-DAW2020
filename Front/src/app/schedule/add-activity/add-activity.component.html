@@ -4,7 +4,7 @@
     <mat-grid-tile conslpan="1">
         <mat-form-field class="example-full-width">
             <mat-label>Tipo de Clase</mat-label>
-            <mat-select [(ngModel)]="activity.name">
+            <mat-select [(ngModel)]="activity.name" required>
                 <mat-option *ngFor="let activity of activities" value="{{activity}}">
                     {{activity}}
 
@@ -17,7 +17,7 @@
     <mat-grid-tile conslpan="1">
         <mat-form-field class="example-full-width">
             <mat-label>Día de la semana</mat-label>
-            <mat-select [(ngModel)]="activity.day">
+            <mat-select [(ngModel)]="activity.day" required>
                 <mat-option *ngFor="let day of days;let i=index" value="{{i}}">
                     {{day}}
                 </mat-option>
@@ -28,7 +28,7 @@
     <mat-grid-tile conslpan="1">
         <mat-form-field class="example-full-width">
             <mat-label>Hora</mat-label>
-            <input matInput placeholder="Introduce hora" type="number" min="7" max="22" [(ngModel)]="hour">
+            <input matInput placeholder="Introduce hora" type="number" min="7" max="22" required [(ngModel)]="hour">
 
         </mat-form-field>
     </mat-grid-tile>

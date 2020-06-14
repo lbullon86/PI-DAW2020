@@ -499,12 +499,12 @@ export class InvoiceService {
 
     invoicing.B16 = queryResultB16;
     invoicing.B8 = queryResultB8;
-    invoicing.reformer1 = queryResultR1;
-    invoicing.reformer2 = queryResultR2;
-    invoicing.mat1 = queryResultMT1;
-    invoicing.mat2 = queryResultMT2;
-    invoicing.totalBarre1 = queryResultTB1;
-    invoicing.totalBarre2 = queryResultTB2;
+    invoicing.R1 = queryResultR1;
+    invoicing.R2 = queryResultR2;
+    invoicing.MAT1 = queryResultMT1;
+    invoicing.MAT2 = queryResultMT2;
+    invoicing.TB1 = queryResultTB1;
+    invoicing.TB2 = queryResultTB2;
     invoicing = this.getIsNull(invoicing);
 
     return invoicing;
@@ -675,14 +675,15 @@ export class InvoiceService {
       'TB2',
     );
 
+
     invoicing.B16 = queryResultB16;
     invoicing.B8 = queryResultB8;
-    invoicing.reformer1 = queryResultR1;
-    invoicing.reformer2 = queryResultR2;
-    invoicing.mat1 = queryResultMT1;
-    invoicing.mat2 = queryResultMT2;
-    invoicing.totalBarre1 = queryResultTB1;
-    invoicing.totalBarre2 = queryResultTB2;
+    invoicing.R1 = queryResultR1;
+    invoicing.R2 = queryResultR2;
+    invoicing.MAT1 = queryResultMT1;
+    invoicing.MAT2 = queryResultMT2;
+    invoicing.TB1 = queryResultTB1;
+    invoicing.TB2 = queryResultTB2
     invoicing = this.getIsNull(invoicing);
     return invoicing;
   }

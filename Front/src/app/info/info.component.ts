@@ -3,6 +3,7 @@ import { Company } from './company-model';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { UsersComponent } from '../users/users.component';
 import { CompanyService } from '../company/company.service';
+import { InfoService } from './info.service';
 
 @Component({
   selector: 'app-info',
@@ -12,13 +13,14 @@ import { CompanyService } from '../company/company.service';
 export class InfoComponent implements OnInit {
   company:Company;
 
-  constructor(public dialogRef: MatDialogRef<UsersComponent>,public dialog :MatDialog,private companyService:CompanyService) { 
+  constructor(public dialogRef: MatDialogRef<UsersComponent>,public dialog :MatDialog,private companyService:InfoService) { 
     this.company = new Company()
     
   }
 
   ngOnInit(){
     this.companyService.findAll().subscribe(company => this.company = company)
+    alert(this.company.name)
   }
 
 

@@ -41,9 +41,6 @@ export class InvoiceController {
     return this.invoiceService.getDefaulters()
   }
 
-
-
-
   @Get('/passes')
   getPasses(){
     return this.invoiceService.getPasses();

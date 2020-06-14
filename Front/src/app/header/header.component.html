@@ -11,19 +11,19 @@
                 <a class="nav-link" [routerLink]="['/contabilidad']">Contabilidad</a>
             </li>
             <li>
-                <mat-form-field>
-                    <mat-label>Configuración</mat-label>
-                    <mat-select >
-                        <mat-option (click)="addUser()">Usuarios</mat-option>
-                        <mat-option (click)="addPrice()">Precios</mat-option>
-                        <mat-option (click)="addInfo()">Datos Fiscales</mat-option>
-                    </mat-select>
-                </mat-form-field>
+                <a class="nav-link" (click)="addUser()">Usuarios</a>
+            </li>
+            <li>
+                <a class="nav-link" (click)="addPrice()">Precios</a>
+            </li>
+            <li>
+                <a class="nav-link" (click)="addInfo()">Datos Fiscales</a>
+
             </li>
         </ul>
         <img fxLayoutAlign="center" class="avatar" src='../../assets/power.png' (click)="logout()">
 
-   
+
     </div>
 
 </nav>

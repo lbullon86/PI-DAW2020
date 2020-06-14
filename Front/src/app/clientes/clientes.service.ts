@@ -20,6 +20,12 @@ export class ClientesService {
     return this.http.get(this.urlClient) as Observable<Client[]>
 
   }
+
+  getInactives(): Observable<Object[]> {
+    return this.http.get(`${this.urlClient}/actives` ) as Observable<Client[]>
+
+
+  }
   /**
    * 
    * @param client 
@@ -27,9 +33,6 @@ export class ClientesService {
   save(client: Client): Observable<Object> {
     return this.http.post<Client>(this.urlClient, client);
   }
-
-
-
   /**
    * 
    * @param id 
@@ -54,6 +57,10 @@ export class ClientesService {
 
     return this.http.put(`${this.urlClient}/${client.idClient}`, client) as Observable<Client>;
 
+  }
+
+  getLimitDefaulters(): Observable<Client[]> {
+    return this.http.get(`${this.urlClient}/limitDefaulters`) as Observable<Client[]>
   }
 
   getDefaulters(): Observable<Client[]> {

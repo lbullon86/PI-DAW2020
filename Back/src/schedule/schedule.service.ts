@@ -75,11 +75,14 @@ export class ScheduleService {
       const dateDB = new Date();
       dateDB.setHours((parseInt(activities[count].hour.toLocaleString().split(":")[0])))
       dateDB.setMinutes(parseInt(activities[count].hour.toLocaleString().split(":")[1]))
-      if ((date.getTime() - dateDB.getTime()) >= 4490000 || (dateDB.getTime() - date.getTime()) >= 4490000) {
+      console.log("db2=>"+dateDB)
+      console.log("dif entre introducidad y .." + (date.getTime() - dateDB.getTime()))
+      if ((date.getTime() - dateDB.getTime()) <= 4440000 &&  (date.getTime() - dateDB.getTime())>0 ||
+      (dateDB.getTime() - date.getTime()) <= 4440000 &&  (dateDB.getTime() - date.getTime())>0
+      ) {
         throw new HttpException('El sitio ya está ocupado', HttpStatus.BAD_REQUEST);
             }
-      count++;
-    }
+      count++;    }
     return flag;
   }
 }

@@ -15,6 +15,7 @@ import { AddAttendanceComponent } from './add-attendance/add-attendance.componen
 import { FormsModule } from '@angular/forms';
 import { InvoicesComponent } from '../invoices/invoices.component';
 import { DiarioModule } from '../diario/diario.module';
+import { MatCardModule } from '@angular/material/card';
 
 
 
@@ -22,7 +23,7 @@ import { DiarioModule } from '../diario/diario.module';
   declarations: [DetailClientComponent, UpdateClientComponent, AddPayComponent, AddAttendanceComponent,InvoicesComponent],
   imports: [
     CommonModule,AppRoutingModule,DiarioModule,MatDatepickerModule,MatInputModule,MatFormFieldModule,MatInputModule,
-    MatGridListModule, MatSelectModule, FormsModule, MatSlideToggleModule, MatTableModule,FormsModule
+    MatGridListModule, MatSelectModule, FormsModule, MatSlideToggleModule, MatTableModule,FormsModule,MatCardModule
   ],
   entryComponents:[UpdateClientComponent,AddPayComponent,AddAttendanceComponent, InvoicesComponent]
 })

@@ -1,23 +1,25 @@
 export class InvoicingClass {
-  totalBarre1: number;
-  totalBarre2: number;
-  mat1: number;
-  mat2: number;
-  reformer1: number;
-  reformer2: number;
-  B8: number;
-  B16: number;
-  month: number;
+  sum:number;
+  TB1:number;
+  TB2:number;    
+  MAT1:number;
+  MAT2:number;
+  R1:number;
+  R2:number;
+  B8:number;
+  B16:number;
+  month:number;
 
   constructor(value: any = {}) {
-    this.totalBarre1 = value.totalBarre1 || 0;
-    this.totalBarre2 = value.totalBarre2 || 0;
-    this.mat1 = value.mat1 || 0;
-    this.mat2 = value.mat2 || 0;
-    this.reformer1 = value.reformer1 || 0;
-    this.reformer2 = value.reformer2 || 0;
+    this.TB1 = value.TB1 || 0;
+    this.TB2 = value.TB2 || 0;
+    this.MAT1 = value.MAT1 || 0;
+    this.MAT2 = value.MAT2 || 0;
+    this.R1 = value.R1 || 0;
+    this.R2 = value.R2 || 0;
     this.B8 = value.B8 || 0;
     this.B16 = value.B16 || 0;
-    this.month = value.month || 0;
+    this.month= value.month || 0;
+
   }
 }

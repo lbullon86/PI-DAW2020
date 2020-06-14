@@ -20,7 +20,6 @@ import { AuthGuard } from '@nestjs/passport';
 export class ClientesController {
 
   constructor(private readonly clientesService: ClientesService) { }
-  @UseGuards(AuthGuard())
   @Get()
   getAll() {
     return this.clientesService.getAll();
@@ -35,9 +34,20 @@ export class ClientesController {
     return this.clientesService.save(client);
   }
 
+  @Get('limitDefaulters')
+  getLimitDefaulters() {
+    return this.clientesService.getLimitDefaulters()
+  }
+
   @Get('defaulters')
   getDefaulters() {
     return this.clientesService.getDefaulters()
+  }
+
+
+  @Get('actives')
+  getInactives() {
+    return this.clientesService.getActives()
   }
 
   /**

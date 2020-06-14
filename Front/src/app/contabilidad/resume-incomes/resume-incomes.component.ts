@@ -141,11 +141,11 @@ export class ResumeIncomesComponent implements OnInit {
     this.dataClass = [
       {
         name: "Reformer",
-        value: this.invoicingClass.reformer1 + this.invoicingClass.reformer2
+        value: this.invoicingClass.R1 + this.invoicingClass.R2
       },
       {
         name: "Mat",
-        value: this.invoicingClass.mat1 + this.invoicingClass.mat2
+        value: this.invoicingClass.MAT1 + this.invoicingClass.MAT2
       },
       {
         name: "Bonos",
@@ -153,7 +153,7 @@ export class ResumeIncomesComponent implements OnInit {
       },
       {
         name: "Total Barre",
-        value: this.invoicingClass.totalBarre1 + this.invoicingClass.totalBarre2
+        value: this.invoicingClass.TB1 + this.invoicingClass.TB2
       }
     ];
   }

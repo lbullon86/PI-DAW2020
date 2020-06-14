@@ -1,6 +1,8 @@
 <h1>Pendientes</h1>
 <mat-selection-list #shoes [multiple]="false">
     <mat-list-option *ngFor="let item of clientesObservable |async" [routerLink]="['/detailClient',item.idClient]">
-      {{item.nameClient}}
+      {{item.nameClient}}  {{item.surnameClient}}
     </mat-list-option>
   </mat-selection-list>
+
+<button (click)="goDefaulters()">Ver todos</button>

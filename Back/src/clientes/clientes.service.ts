@@ -46,6 +46,13 @@ async getInvoices(id:number):Promise<Invoice[]>{
      return client.invoices;
 }
 
+async getActives(){
+    return this.repositoryClients.createQueryBuilder("client")
+    .select("client")
+    .where("activeClient = 1")
+    .getMany();  
+}
+
 
 /**
  * 
@@ -99,11 +106,24 @@ getPasses(client:Clients):Promise<Pass>{
     .from(Invoice, "invoice").where("(invoice.concept = B8  AND invoice.client.idClient = client.idClient").getRawOne();
 }
 
+async getLimitDefaulters(){
+    const qb =await this.invoiceService.getDefaulters();
+    const defaulters = await this.repositoryClients
+    .createQueryBuilder("client")
+    .select("client")
+    .where("activeClient = 1 and idClient  NOT in (:clientes)", {clientes:qb.map(q =>q.idClient)})
+    .take(10)
+    .getMany();  
+    return defaulters
+}
+
 async getDefaulters(){
     const qb =await this.invoiceService.getDefaulters();
     const defaulters = await this.repositoryClients
-    .createQueryBuilder("client").select("client")
-    .where("activeClient = 1 and idClient  NOT in (:clientes)", {clientes:qb.map(q =>q.idClient)}).getMany();  
+    .createQueryBuilder("client")
+    .select("client")
+    .where("activeClient = 1 and idClient  NOT in (:clientes)", {clientes:qb.map(q =>q.idClient)})
+    .getMany();  
     return defaulters
 }
 

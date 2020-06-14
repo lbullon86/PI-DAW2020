@@ -4,8 +4,7 @@ import { Pass } from './pass.model';
 import { Observable } from 'rxjs';
 import { DetailClientComponent, DialogData } from '../detail-client.component';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { isNumber } from 'util';
-import { isNull } from '@angular/compiler/src/output/output_ast';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-add-attendance',
@@ -24,12 +23,11 @@ export class AddAttendanceComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
     private passService:AttendanceService,
     public dialogRef: MatDialogRef<DetailClientComponent>,
-    ) {
+    private datepipe:DatePipe
 
+    ) {
       this.pass = new Pass()
       this.newDateClass = new Date()      
-     
-
    }
 
   ngOnInit() {
@@ -53,5 +51,9 @@ export class AddAttendanceComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  parseDate(date:Date)
+  {
+    return this.datepipe.transform(date, 'dd-MM-yyyy');      
+  }
 
 }

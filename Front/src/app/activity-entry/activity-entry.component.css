@@ -3,7 +3,8 @@
     display: flex;
     flex-direction: row;
     padding: 16px 8px;
-    border-radius: 8px
+    border-radius: 8px;
+    background-color: white;
 }
 
 :host .avatar {

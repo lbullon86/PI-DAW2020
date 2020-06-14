@@ -17,6 +17,7 @@ const routes: Routes = [
       { path: '', pathMatch: 'full', redirectTo: 'home' },
       { path: 'contabilidad', component: ContabilidadComponent },
       { path: 'clientes', component: ClientesComponent },
+      { path: 'clientes', component: ClientesComponent },
       { path: 'company', component: CompanyComponent },
       { path: 'detailClient/:id', component: DetailClientComponent },
       { path: 'home', component: ScheduleComponent },

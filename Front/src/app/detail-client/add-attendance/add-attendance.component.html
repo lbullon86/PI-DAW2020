@@ -1,13 +1,22 @@
 <ng-container *ngIf="passActive; else elseTemplate">
     <mat-grid-list cols="2" rows="5" rowHeight="4:1">
-        <mat-grid-tile colspan="1">
-            Clases Restantes: {{pass.numberClasses}}
-        </mat-grid-tile>
+        <table class="table" colspan="2">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Número</th>
+                    <th scope="col">Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let attendance of pass.dates;index as i">
+                    <td>{{i+1}}</td>
+                    <td>{{parseDate(attendance)}}</td>
+                    
+            </tr>
+            </tbody>
+        </table>
         <mat-grid-tile colspan="2">
-            Clases Realizadas:
-        </mat-grid-tile>
-        <mat-grid-tile colspan="1" *ngFor="let class of pass.dates">
-            {{class}}
+            Clases Restantes: {{pass.numberClasses}}
         </mat-grid-tile>
         <mat-grid-tile colspan="2">
             <mat-form-field>
@@ -20,7 +29,7 @@
 
 
         <mat-grid-tile colspan="2">
-            <button mat-raised-button color="primary"(click)="addAttendance()">Añadir Asistencia</button>
+            <button mat-raised-button color="primary" (click)="addAttendance()">Añadir Asistencia</button>
 
         </mat-grid-tile>
 

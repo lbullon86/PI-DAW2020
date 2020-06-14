@@ -18,6 +18,7 @@ export class AddActivityComponent implements OnInit {
   hour: string;
   minutes: string;
   error: string;
+  dialog: any;
 
 
   constructor(private readonly serviceDiario: DiarioService,
@@ -39,10 +40,17 @@ export class AddActivityComponent implements OnInit {
     this.serviceDiario.save(this.activity)
     .subscribe(
       activity => this.close(),
-      err =>alert(err));
+      err =>  alert(err))
   }
   close() {
     this.dialogRef.close()
+  }
+
+  busy(){
+    const dialogRef = this.dialog.open({
+      width: "450px",
+      height: "450px",
+    });
   }
 
 }
