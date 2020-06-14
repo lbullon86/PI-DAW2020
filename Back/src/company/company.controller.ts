@@ -7,14 +7,16 @@ export class CompanyController {
     constructor(private readonly companyService:CompanyService){
 
     }
-    
+    /**
+     * @return Company, all information of company
+     */
     @Get()
     getAll(): Promise<any[]>{
         return this.companyService.getAll();
     }
 
     /**
-     * 
+     * Save company
      * @param company 
      */
     @Post()

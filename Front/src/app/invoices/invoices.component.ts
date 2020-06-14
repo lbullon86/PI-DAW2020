@@ -20,25 +20,24 @@ export class InvoicesComponent implements OnInit {
   displayedColumns: string[] = ["dateInvoice", "concept", "quantity"];
   idClient: number;
   client: Observable<Client>;
-  
+
   constructor(
     private serviceClient: ClientesService,
     private route: ActivatedRoute,
-    private datepipe:DatePipe
+    private datepipe: DatePipe
   ) {
-    
-  }
-  
-  parseDate(date:Date)
-  {
-    return this.datepipe.transform(date, 'dd-MM-yyyy');      
+
   }
 
-  ngOnInit() {    
+  parseDate(date: Date) {
+    return this.datepipe.transform(date, 'dd-MM-yyyy');
+  }
+
+  ngOnInit() {
     this.getInvoices()
   }
 
-  getInvoices(){
+  getInvoices() {
     this.invoices = this.route.paramMap.pipe(
       switchMap((params: ParamMap) => {
         this.idClient = +params.get("id");

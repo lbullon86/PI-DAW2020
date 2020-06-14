@@ -26,33 +26,45 @@ export class ClientesController {
   }
 
   /**
-   * 
+   * Save one client
    * @param client 
+   * 
    */
   @Post()
   save(@Body() client: Clients) {
     return this.clientesService.save(client);
   }
-
+  /**
+   * Get only 10 defaulters
+   * @return Clients[] the 10 client defaulters
+   */
   @Get('limitDefaulters')
   getLimitDefaulters() {
     return this.clientesService.getLimitDefaulters()
   }
-
+  /**
+   * Get all defaulters 
+   * @return Clients[] All client defaulters
+  
+   */
   @Get('defaulters')
   getDefaulters() {
     return this.clientesService.getDefaulters()
   }
 
-
+  /**
+   * Get only active clients
+   * @return Client[] All clients are actives
+   */
   @Get('actives')
   getInactives() {
     return this.clientesService.getActives()
   }
 
   /**
-   * 
-   * @param id 
+   * Get one client by id
+   * @param id the id of one client
+   * @return Client, the client of the given id
    */
   @Get(':id')
   getOne(@Param('id', ParseIntPipe) id: number): Promise<Clients> {
@@ -61,8 +73,9 @@ export class ClientesController {
 
 
   /**
-   * 
-   * @param id 
+   * Get all invoices from one client by id
+   * @param id the id of one client
+   * @return Invoice[] the invoices of the given client
    */
   @Get(':id/invoices')
   getInvoices(@Param('id', ParseIntPipe) id: number): Promise<Invoice[]> {
@@ -71,9 +84,9 @@ export class ClientesController {
 
 
   /**
-   * 
-   * @param id 
-   * @param invoice 
+   * Save one invoice of the client of the given id
+   * @param id the id of one client
+   * @param invoice Invoice of given client
    */
   @Post(':id/invoices')
   saveInvoice(
@@ -84,9 +97,9 @@ export class ClientesController {
   }
 
   /**
-   * 
-   * @param id 
-   * @param client 
+   * Update one client by id
+   * @param id the id of one client
+   * @param client the update client
    */
 
   @Put(':id')
