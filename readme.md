@@ -63,3 +63,13 @@ Para ello, tenemos que hacer dos partes.
 En primer lugar vamos a abrir una RDS, que no es otra cosa que un sitio que da soporte para una mysql. 
 
 ![Captura de pantalla de 2020-06-17 01-24-15](https://user-images.githubusercontent.com/44227459/84838144-ec29ac80-b039-11ea-9032-c2310c4d19b5.png)
+
+Una vez desarrollada la base de datos, ya sólo queda crear el Beanstalk, para Nodejs, que es la base que necesitamos nosotros para poder desarrollarla. 
+
+Una vez que ha creado el entorno, solo nos queda subir nuestro proyecto. Pero para ello lo vamos a compilar. 
+Para ello, solo habría que desarrollar el [script.sh](https://github.com/lbullon86/test/blob/master/script.sh) creado.
+En este script, compilamos, primero el front. Esa compilación la pasamos al back dist Back. 
+Compilamos el Back. Y una vez todo compilado se crea un zip en la carpeta dist de Back.
+
+Ese archivo lo subimos, y se despliega la app, creando un endpoint. 
+
