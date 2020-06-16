@@ -8,7 +8,13 @@ import { Activity } from '../schedule/add-activity/activity-model';
 })
 export class ActivityEntryComponent implements OnInit {
   @Input() activity: Activity;
+  hour:string;
+  minutes:string;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.hour = this.activity.hour.split(":")[0]
+    this.minutes = this.activity.hour.split(":")[1]
+
+  }
 }

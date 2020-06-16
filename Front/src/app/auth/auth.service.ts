@@ -64,6 +64,7 @@ export class AuthService {
   private _clearExpiration() {
     // Remove token expiration from localStorage
     localStorage.removeItem('expires_at');
+    this.router.navigate(['/login'])
   }
   logout() {
     // Remove data from localStorage
@@ -87,6 +88,19 @@ export class AuthService {
         this._clearExpiration();
       }
     });
+  }
+
+  checkSession(): Promise<Boolean> {
+    return new Promise((resolve, reject) => {
+		this.webAuth.checkSession({}, (err, authResult) => {
+      		if (authResult && authResult.accessToken) {
+        		this._setSession(authResult);
+        		resolve(true);
+      		} else {
+        		resolve(false);
+      		}
+    	});
+	});
   }
 }
 

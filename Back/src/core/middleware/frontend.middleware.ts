@@ -15,7 +15,7 @@ const allowedExt = [
   '.svg'
 ];
 ​
-const resolvePath = (file: string) => path.resolve(`/home/ubuntu/PilatesApp/Front/dist/AppMaite/${file}`);
+const resolvePath = (file: string) => path.resolve(`./frontend/AppMaite/${file}`);
 
 ​
 @Injectable()

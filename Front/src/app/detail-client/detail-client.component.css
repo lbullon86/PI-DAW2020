@@ -1,2 +1,56 @@
-app-invoices {
-margin-bottom: auto}
+.bluebutton{
+    background-color: #4179f2;
+    height: 52px;
+}
+
+.whiteButton{
+    height: 52px;
+    border: solid 2px #12263a;
+}
+
+.dato{
+
+font-family: Roboto;
+font-size: 16px;
+font-weight: bold;
+font-stretch: normal;
+font-style: normal;
+line-height: normal;
+letter-spacing: normal;
+color: #9599a2;
+}
+
+body{
+    font-family: Roboto;
+    margin-top: 24px;
+    color: #9599a2;
+}
+
+
+.param{
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #12263a;
+}
+
+aside{
+    margin-top:24px;
+    float:right;
+    width:24%;
+    background-color: #ffffff;
+}
+section{
+    margin-top:24px;
+    width: 74%;
+    background-color: #ffffff;
+
+}
+
+#invoices{
+    width: 100%;
+}

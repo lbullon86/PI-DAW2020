@@ -1,14 +1,23 @@
 .filtro {
-    background-color:black;
+    background-color: #9599a2;
     width: 100%;
+    color:black
 }
 
 .filtering{
     padding: 4px;
-    color: white;
+    color: black;
 
 }
 
 table {
     width: 100%;
+}
+
+.button{
+    background-color: #4179f2;
+}
+
+.fluid{
+    margin-top: 24px;
 }

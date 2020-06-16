@@ -1,8 +1,8 @@
 <div fxLayout="row" class="all">
-    <div fxFlex="74" >
+    <div fxFlex="74" class="schedule">
         <div fxLayout="row">
             <div *ngFor="let day of week; let i=index" fxFlex="20">
-                {{days[i]}}
+                <span class="day">{{days[i]}}</span>
                 <div *ngFor="let activity of day" fxLayout="column">
                     <app-activity-entry [activity]="activity" (click)="modalUpdate(activity)"></app-activity-entry>
 
@@ -16,7 +16,7 @@
     </div>
     <div fxFlex="2">
     </div>
-    <div fxFlex="24" class="lateral">
+    <div fxFlex="24" class="lateral" >
         <app-defaulters></app-defaulters>
     </div>
 </div>

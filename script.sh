@@ -9,8 +9,12 @@
 # - subirlo a beanstalk
 
 #!/bin/bash
-cd "Back"
-eval "npm run build"
-cd "../Front"
-eval "npm run build"
-eval "mv dist ../Back/dist/frontend"
+cd Back
+npm run build
+cp package.json ./dist/
+cd ../Front
+npm run build:pro
+mv dist ../Back/dist/frontend
+cd ../Back/dist
+zip -r Project.zip * 
+

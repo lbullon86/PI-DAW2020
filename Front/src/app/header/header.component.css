@@ -1,21 +1,13 @@
-.navbar {
-    color:white;
-    border:1px solid black;
-    background-color: #232837;
-    border-radius: 5px;
-    font-size: 20px;
-}
-
-body    {
-    color:white;
-
-}
-
-a , mat-label{
-    color: white;
-    text-decoration:none ;
-}
-
-.avatar{
-    background-color: white;
+nav{
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #12263a;
+    background-color: #ffffff;
+    text-decoration: none;
 }

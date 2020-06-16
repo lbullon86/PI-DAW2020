@@ -1,13 +1,27 @@
-.avatar {
-    background-size: contain;
-    border: solid 1px black;
-    margin-left: 30px;
+.day {
+  width: 268px;
+  height: 35px;
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #9599a2;
+}
+.all{
+    text-align: center;
+    margin-top: 24px;
+    font-family: Roboto;
+}
+
+.schedule{
+  box-shadow: 0 2px 6px 0 rgba(48, 53, 59, 0.15);
+  background-color: #ffffff;
 }
 
 .lateral{
-    background-color: #439788;
-    box-shadow:#0f4258;
-}
-.all{
-    background-color: #fafaf1
+  box-shadow: 0 2px 6px 0 rgba(48, 53, 59, 0.15);
+  background-color: #ffffff;
 }

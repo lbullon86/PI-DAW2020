@@ -80,4 +80,13 @@ export class DetailClientComponent implements OnInit {
     dialogRef.afterClosed().subscribe()    
 
   }
+
+  getStatus(status){
+    if(status){
+      return "Activo"
+    }else{
+      return "Inactivo"
+    }
+
+  }
 }

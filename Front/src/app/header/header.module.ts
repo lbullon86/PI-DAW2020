@@ -5,13 +5,14 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { AppRoutingModule } from '../app-routing.module';
+import { MatTabsModule } from '@angular/material/tabs';
 
 
 
 @NgModule({
   declarations: [HeaderComponent],
   imports: [
-    CommonModule,MatOptionModule,MatFormFieldModule,MatSelectModule,AppRoutingModule
+    CommonModule,MatOptionModule,MatFormFieldModule,MatSelectModule,AppRoutingModule,MatTabsModule
   ],
   exports: [HeaderComponent]
 })
