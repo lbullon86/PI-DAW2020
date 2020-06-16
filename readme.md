@@ -62,3 +62,4 @@ Yo en mi caso también la he desplegado a través Elastic Beanstalk y Rds de AWS
 Para ello, tenemos que hacer dos partes. 
 En primer lugar vamos a abrir una RDS, que no es otra cosa que un sitio que da soporte para una mysql. 
 
+![Captura de pantalla de 2020-06-17 01-24-15](https://user-images.githubusercontent.com/44227459/84838144-ec29ac80-b039-11ea-9032-c2310c4d19b5.png)
