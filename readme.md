@@ -10,13 +10,13 @@ La aplicación está diseñada para el uso en un estudio de **Pilates** con el u
 
 ## Principales Objetivos
 
-- Desarrollo de una base de datos de los clientes.
-- Gestión de los pagos e impagos.
-- Gestión de los tipos de clases actuales.
-- Gestión del horario de clases.
-- Gestión de caja, tanto diaria como intervalo de tiempos.
-- Gestión de gastos de la empresa.
-- Gestión de asistencia a los bonos por parte de los clientes.
+-Desarrollo de una base de datos de los clientes.
+-Gestión de los pagos e impagos.
+-Gestión de los tipos de clases actuales.
+-Gestión del horario de clases.
+-Gestión de caja, tanto diaria como intervalo de tiempos.
+-Gestión de gastos de la empresa.
+-Gestión de asistencia a los bonos por parte de los clientes.
 
 ## Tecnologías
 
@@ -33,6 +33,32 @@ Para comenzar a funcionar la aplicación hay que realizar los siguientes comando
 
 - Instalación del cliente npm
 >sudo apt install npm
-
 - Instalación de Angular.
 >sudo npm install -g @angular/cli
+- Instalación librería de Material.
+> ng add @angular/material
+- Instalación de librería de Ngx.
+>npm install @swimlane/ngx-charts --save
+- Instalación de actualizador de librerías.
+>npm install -g npm-check-updates
+
+Una vez teniendo esto en marcha, tendremos que crear nuestra propia base de datos dentro de mysql. Y en el archivo database.env, introducir los parametros correspondientes al nombre de la base de datos, contraseña y usuario(user,pass,database). 
+Una vez hecho esto, crear la base de datos vacía en mysql con el nombre acordado.
+
+# Despliegue Local
+
+Para desplegarlo de manera local, solo tendremos que realizar dos comandos:
+- >npm run start:dev
+
+Lo cual nos levanta la parte Back. Este comando lo tendremos que realizar desde la propia carpeta Back.
+
+- >npm start
+
+Desde la carpeta Front, para levantar Angular. Con esto tendremos nuestra aplicación en local. Levantanda en los puertos 3000 y 4200 respectivamente.
+
+# Despliegue AWS
+
+Yo en mi caso también la he desplegado a través Elastic Beanstalk y Rds de AWS. 
+Para ello, tenemos que hacer dos partes. 
+En primer lugar vamos a abrir una RDS, que no es otra cosa que un sitio que da soporte para una mysql. 
+
