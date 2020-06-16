@@ -10,13 +10,13 @@ La aplicación está diseñada para el uso en un estudio de **Pilates** con el u
 
 ## Principales Objetivos
 
--Desarrollo de una base de datos de los clientes.
--Gestión de los pagos e impagos.
--Gestión de los tipos de clases actuales.
--Gestión del horario de clases.
--Gestión de caja, tanto diaria como intervalo de tiempos.
--Gestión de gastos de la empresa.
--Gestión de asistencia a los bonos por parte de los clientes.
+- Desarrollo de una base de datos de los clientes.
+- Gestión de los pagos e impagos.
+- Gestión de los tipos de clases actuales.
+- Gestión del horario de clases.
+- Gestión de caja, tanto diaria como intervalo de tiempos.
+- Gestión de gastos de la empresa.
+- Gestión de asistencia a los bonos por parte de los clientes.
 
 ## Tecnologías
 
