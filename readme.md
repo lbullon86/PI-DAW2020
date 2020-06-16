@@ -73,3 +73,5 @@ Compilamos el Back. Y una vez todo compilado se crea un zip en la carpeta dist d
 
 Ese archivo lo subimos, y se despliega la app, creando un endpoint. 
 
+![Captura de pantalla de 2020-06-17 01-34-09](https://user-images.githubusercontent.com/44227459/84838430-b6d18e80-b03a-11ea-9171-4f111d08d2f1.png)
+
