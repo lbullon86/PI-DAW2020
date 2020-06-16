@@ -13,13 +13,14 @@ import { UpdateClientComponent } from 'src/app/detail-client/update-client/updat
 })
 export class UpdateScheduleComponent implements OnInit {
 
-  activities =[];
-  days =[]
-  activity:Activity;
-  hour:string;
-  minutes:string;
+  activities = [];
+  days = []
+  activity: Activity;
+  hour: string;
+  minutes: string;
   parameter = true;
-  
+  error: string
+
   constructor(private serviceSchedule: DiarioService,
     @Inject(MAT_DIALOG_DATA) public data: DataUpdate,
     public dialogRef: MatDialogRef<ScheduleComponent>,
@@ -27,14 +28,14 @@ export class UpdateScheduleComponent implements OnInit {
   ) {
     this.activity = new Activity();
     this.activity.id = data.id;
-    this.activities =["Total Barre", "Reformer", "Individual", "Iniciacion", "Mat"]
+    this.activities = ["Total Barre", "Reformer", "Individual", "Iniciacion", "Mat"]
     this.days = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"]
     this.hour;
     this.minutes;
   }
 
-  ngOnInit(): void {
-
+  async ngOnInit() {
+    this.serviceSchedule.getOne(this.activity.id).subscribe(act => this.activity = act)
   }
 
   delete() {
@@ -44,5 +45,10 @@ export class UpdateScheduleComponent implements OnInit {
   async update() {
     this.parameter = false;
     this.hour = await this.activity.hour.split(":")[0];
+  }
+
+  updating() {
+    this.serviceSchedule.update(this.activity).subscribe(activity => this.dialogRef.close()
+    , err => this.error = "* No es posible poner clase a esa hora")
   }
 }

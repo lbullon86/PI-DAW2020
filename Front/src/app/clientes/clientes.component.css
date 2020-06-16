@@ -1,9 +1,17 @@
-.filtro {
-    background-color: #9599a2;
-    width: 100%;
-    color:black
+.filtros {
+    color:black;
+    width:100%
 }
+.check{
+    width: 20%;
+    float: left;
+    margin-left: 80%;
+}
+.filtro{
+    background-color: #9599a2;
+    width: 90%;
 
+}
 .filtering{
     padding: 4px;
     color: black;
@@ -21,3 +29,4 @@ table {
 .fluid{
     margin-top: 24px;
 }
+

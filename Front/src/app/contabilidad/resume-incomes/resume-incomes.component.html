@@ -1,26 +1,15 @@
-<div fxFlex="65">
-    <ng-container *ngIf="parameter; else elseChart">
-        <ngx-charts-advanced-pie-chart class="grafica" [scheme]="colorScheme" [results]="dataClass"
+<div class="grafica" fxFlex="65">
+   <ngx-charts-advanced-pie-chart  [scheme]="colorScheme" [results]="parameter ? dataClass: dataPayment"
             (select)="onSelect($event)" (activate)="onActivate($event)" (deactivate)="onDeactivate($event)">
         </ngx-charts-advanced-pie-chart>
-    </ng-container>
-    <ng-template #elseChart>
-        <ngx-charts-advanced-pie-chart class="grafica" [scheme]="colorScheme" [results]="dataPayment"
-            (select)="onSelect($event)" (activate)="onActivate($event)" (deactivate)="onDeactivate($event)">
-        </ngx-charts-advanced-pie-chart>
-    </ng-template>
 </div>
 <div fxFlex="35">
     <div fxLayout="column">
         <section fxFlex="100" class="example-section">
-            <mat-slide-toggle class="example-margin" [(ngModel)]="parameter">
-                <ng-container *ngIf="parameter; else elseTemplate">
-                    Clases
-                </ng-container>
-                <ng-template #elseTemplate>
-                    Métodos de pago
-                </ng-template>
-            </mat-slide-toggle>
+            <mat-radio-group aria-label="Selecciona " [(ngModel)]="parameter">
+                <mat-radio-button [value]="true">Clases</mat-radio-button>
+                <mat-radio-button [value]="false">Método de pago</mat-radio-button>
+              </mat-radio-group>
         </section>
         <ng-container *ngIf="parameter; else panelClass">
             <mat-accordion fxFlex="100" class="example-headers-align">

@@ -45,8 +45,10 @@
     </mat-grid-tile>
 
     <mat-grid-tile colspan="1">
-        <button mat-raised-button color="primary" (click)="saveActivity()">Añadir</button>
+        <button mat-flat-button color="primary" class="bluebutton" (click)="saveActivity()">Añadir</button>
     </mat-grid-tile>
     <mat-grid-tile colspan="1">
-        <button mat-button (click)="close()">No Thanks</button>
+        <button mat-flat-button  class="whiteButton" (click)="close()">No Thanks</button>
     </mat-grid-tile>
+    </mat-grid-list>
+    <span>{{error}}</span>

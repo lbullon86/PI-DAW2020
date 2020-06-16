@@ -7,6 +7,7 @@ import { Client } from './cliente';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { InsertClientComponent } from './insert-client/insert-client.component';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { PageEvent, MatPaginator } from '@angular/material/paginator';
 
 
 @Component({
@@ -23,22 +24,23 @@ export class ClientesComponent implements OnInit {
   flag: number;
   active: Boolean;
   pendientes: Boolean;
-  
 
 
-  constructor(private clientService: ClientesService, public dialog: MatDialog,private route: ActivatedRoute) {
+
+  constructor(private clientService: ClientesService, public dialog: MatDialog, private route: ActivatedRoute) {
     this.client = new Client();
     this.client.activeClient = false;
     this.active = false;
     this.clients = this.clientService.findAll().pipe(map(data => this.clientsData = new MatTableDataSource(data)));
-    this.pendientes= false;
+    this.pendientes = false;
     this.route.queryParams.subscribe(params => {
-      this.pendientes = params.active;
+    this.pendientes = params.active;
     })
   }
 
   ngOnInit() {
     this.filter()
+
   }
 
   /**
@@ -76,6 +78,7 @@ export class ClientesComponent implements OnInit {
       ;
 
   }
+
 
 
 

@@ -22,6 +22,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSelectModule } from '@angular/material/select';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatRadioModule} from '@angular/material/radio';
+
 
 
 
@@ -31,7 +33,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
   declarations: [ContabilidadComponent,IncomesComponent, ExpensesComponent, BalanceComponent, ResumeIncomesComponent,InsertExpenseComponent],
   imports: [
     CommonModule,MatTableModule,MatButtonModule,MatFormFieldModule, MatDatepickerModule, FormsModule, MatGridListModule,MatInputModule, MatPaginatorModule, FlexLayoutModule, MatCardModule, MatTabsModule,
-    NgxChartsModule,MatIconModule, MatSlideToggleModule,MatSelectModule,MatExpansionModule,
+    NgxChartsModule,MatIconModule, MatSlideToggleModule,MatSelectModule,MatExpansionModule,MatCardModule, MatCardModule,MatRadioModule
+
 
 
   ],

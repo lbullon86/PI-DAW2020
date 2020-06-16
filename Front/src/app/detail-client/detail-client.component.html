@@ -1,39 +1,35 @@
-<body>
+<div class="diario">
     <app-diario>
     </app-diario>
-    <aside>
-        <app-invoices id="invoices"></app-invoices>
-    </aside>
-    <section>
-            <h1>{{(client | async)?.nameClient}} {{(client | async)?.surnameClient}}</h1>
-        <mat-grid-list cols="9" rows="5" rowHeight="30px">
-            <mat-grid-tile class="dato" [colspan]="3" [rowspan]="1">Direccion:</mat-grid-tile>
-            <mat-grid-tile class="dato" [colspan]="3" [rowspan]="1">Fecha Nacimiento:</mat-grid-tile>
-            <mat-grid-tile class="dato" [colspan]="3" [rowspan]="1">Teléfono:</mat-grid-tile>
-            <mat-grid-tile class="param" [colspan]="3" [rowspan]="1">{{(client | async)?.addressClient}}</mat-grid-tile>
-            <mat-grid-tile class="param" [colspan]="3" [rowspan]="1">{{(client | async)?.birthDateClient}}
-            </mat-grid-tile>
-            <mat-grid-tile class="param" [colspan]="3" [rowspan]="1">{{(client | async)?.phoneClient}}</mat-grid-tile>
-            <mat-grid-tile class="dato" [colspan]="3" [rowspan]="1">Correo electrónico:</mat-grid-tile>
-            <mat-grid-tile class="dato" [colspan]="3" [rowspan]="1">Dni:</mat-grid-tile>
-            <mat-grid-tile class="dato" [colspan]="3" [rowspan]="1">Status:</mat-grid-tile>
-            <mat-grid-tile class="param" [colspan]="3" [rowspan]="1">{{(client | async)?.emailClient}}</mat-grid-tile>
-            <mat-grid-tile class="param" [colspan]="3" [rowspan]="1">{{(client | async)?.dniClient}}</mat-grid-tile>
-            <mat-grid-tile class="param" [colspan]="3" [rowspan]="1">{{getStatus((client | async)?.activeClient)}}
-            </mat-grid-tile>
-            <mat-grid-tile [colspan]="3" [rowspan]="1">
-                <button class="whiteButton" mat-flat-button (click)="addPay()">Añadir Pago</button>
-
-            </mat-grid-tile>
-            <mat-grid-tile [colspan]="3" [rowspan]="1">
-                <button class="bluebutton" mat-flat-button color="primary" (click)="addAttendance()">Añadir
-                    Asistencia</button>
-
-            </mat-grid-tile>
-            <mat-grid-tile [colspan]="3" [rowspan]="1">
-                <button (click)="updateClient()">Modificar Datos</button>
-
-            </mat-grid-tile>
+</div>
+<aside>
+    <app-invoices id="invoices"></app-invoices>
+</aside>
+<section>
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+        <h1>{{(client | async)?.nameClient}} {{(client | async)?.surnameClient}}</h1>
+        <img fxLayoutAlign="end" class="avatar" src='../../assets/pen.svg' (click)="updateClient()">
+    </div>
+    <mat-grid-list cols="9" rows="5" rowHeight="30px">
+        <mat-grid-tile class="dato" [colspan]="3" [rowspan]="1">
+            <div>Direccion:</div>
+        </mat-grid-tile>
+        <mat-grid-tile class="dato" [colspan]="3" [rowspan]="1">Fecha Nacimiento:</mat-grid-tile>
+        <mat-grid-tile class="dato" [colspan]="3" [rowspan]="1">Teléfono:</mat-grid-tile>
+        <mat-grid-tile class="param" [colspan]="3" [rowspan]="1">{{(client | async)?.addressClient}}</mat-grid-tile>
+        <mat-grid-tile class="param" [colspan]="3" [rowspan]="1">{{(client | async)?.birthDateClient}}
+        </mat-grid-tile>
+        <mat-grid-tile class="param" [colspan]="3" [rowspan]="1">{{(client | async)?.phoneClient}}</mat-grid-tile>
+        <mat-grid-tile class="dato" [colspan]="3" [rowspan]="1">Correo electrónico:</mat-grid-tile>
+        <mat-grid-tile class="dato" [colspan]="3" [rowspan]="1">Dni:</mat-grid-tile>
+        <mat-grid-tile class="dato" [colspan]="3" [rowspan]="1">Status:</mat-grid-tile>
+        <mat-grid-tile class="param" [colspan]="3" [rowspan]="1">{{(client | async)?.emailClient}}</mat-grid-tile>
+        <mat-grid-tile class="param" [colspan]="3" [rowspan]="1">{{(client | async)?.dniClient}}</mat-grid-tile>
+        <mat-grid-tile class="param" [colspan]="3" [rowspan]="1">{{getStatus((client | async)?.activeClient)}}
+        </mat-grid-tile>
     </mat-grid-list>
+    <div fxLayout="row" fxLayoutAlign="end" class="botones">
+    <button class="whiteButton" mat-flat-button (click)="addPay()">Añadir Pago</button>
+    <button class="bluebutton" mat-flat-button color="primary" (click)="addAttendance()">Añadir Asistencia</button>
+    </div>  
 </section>
-</body>

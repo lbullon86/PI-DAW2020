@@ -18,6 +18,7 @@ export interface DialogData{
 })
 export class InsertClientComponent {
   public client:Client;
+  error:string;
 
   constructor(private clientService:ClientesService,
     public dialogRef: MatDialogRef<ClientesComponent>,
@@ -29,7 +30,8 @@ export class InsertClientComponent {
     }
 
     addUser(){
-      return this.clientService.save(this.client).subscribe(clients => this.dialogRef.close(this.dialogRef) )
+      return this.clientService.save(this.client).subscribe(clients => this.dialogRef.close(this.dialogRef),      
+      err =>  this.error= "* Uno de los parámetros es incorrecto")
     }
 
     closeWindow(){

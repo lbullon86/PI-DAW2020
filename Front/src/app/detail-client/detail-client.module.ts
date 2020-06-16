@@ -17,6 +17,8 @@ import { InvoicesComponent } from '../invoices/invoices.component';
 import { DiarioModule } from '../diario/diario.module';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { FlexModule } from '@angular/flex-layout';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -24,7 +26,7 @@ import { MatButtonModule } from '@angular/material/button';
   declarations: [DetailClientComponent, UpdateClientComponent, AddPayComponent, AddAttendanceComponent,InvoicesComponent],
   imports: [
     CommonModule,AppRoutingModule,DiarioModule,MatDatepickerModule,MatInputModule,MatFormFieldModule,MatInputModule,
-    MatGridListModule, MatSelectModule, FormsModule, MatSlideToggleModule, MatTableModule,FormsModule,MatCardModule,MatButtonModule
+    MatGridListModule, MatSelectModule, FormsModule, MatSlideToggleModule, MatTableModule,FormsModule,MatCardModule,MatButtonModule,FlexModule,MatIconModule
   ],
   entryComponents:[UpdateClientComponent,AddPayComponent,AddAttendanceComponent, InvoicesComponent]
 })

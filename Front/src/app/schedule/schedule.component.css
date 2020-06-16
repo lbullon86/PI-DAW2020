@@ -14,14 +14,17 @@
     text-align: center;
     margin-top: 24px;
     font-family: Roboto;
+    min-height: calc(100vh - 80px);
 }
 
 .schedule{
   box-shadow: 0 2px 6px 0 rgba(48, 53, 59, 0.15);
   background-color: #ffffff;
+  padding:0 16px 16px 16px;
 }
 
 .lateral{
   box-shadow: 0 2px 6px 0 rgba(48, 53, 59, 0.15);
   background-color: #ffffff;
 }
+

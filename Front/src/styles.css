@@ -11,3 +11,16 @@ body {
 .advanced-pie-legend .legend-items-container .item-percent {
     line-height: 32px;
 }
+
+.bluebutton{
+    background-color: #4179f2;
+    height: 52px;
+    width: 206px;
+}
+
+
+.whiteButton{
+    height: 52px;
+    border: solid 2px #12263a;
+    width: 206px;
+}

@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DiarioModule } from '../diario/diario.module';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 @NgModule({
@@ -22,7 +23,7 @@ import { DiarioModule } from '../diario/diario.module';
   imports: [
     CommonModule, HttpClientModule, MatFormFieldModule, MatTableModule, FormsModule,
     MatSlideToggleModule, MatDatepickerModule, MatInputModule, MatButtonModule,
-    AppRoutingModule, MatGridListModule,DiarioModule, MatPaginatorModule, FlexLayoutModule
+    AppRoutingModule, MatGridListModule,DiarioModule, MatPaginatorModule, FlexLayoutModule, MatCheckboxModule
   ],
   entryComponents: [ InsertClientComponent],
 

@@ -40,7 +40,7 @@ export class AddActivityComponent implements OnInit {
     this.serviceDiario.save(this.activity)
     .subscribe(
       activity => this.close(),
-      err =>  alert(err))
+      err =>  this.error= "* No es posible poner clase a esa hora")
   }
   close() {
     this.dialogRef.close()

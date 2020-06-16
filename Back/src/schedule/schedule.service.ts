@@ -23,6 +23,10 @@ export class ScheduleService {
     }
   }
 
+  getOne(id:number):Promise<Schedule>{
+    return this.repositorySchedule.findOne(id)
+}
+
   async getOneDay(daySelected: number) {
     var allDay: Schedule[] = [];
     allDay = await this.repositorySchedule

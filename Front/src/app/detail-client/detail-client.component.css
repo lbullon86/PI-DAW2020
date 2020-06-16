@@ -39,18 +39,26 @@ body{
 }
 
 aside{
+    min-height: calc(100vh - 140px);
     margin-top:24px;
     float:right;
     width:24%;
     background-color: #ffffff;
 }
 section{
+    min-height: calc(100vh - 140px);
+    padding: 8px;
     margin-top:24px;
     width: 74%;
     background-color: #ffffff;
-
+    text-align: left;
 }
 
-#invoices{
-    width: 100%;
+.diario{
+    margin-top:24px ;
+}
+
+.botones{
+    padding:0px 16px 16px 16px;
+    margin-top:200px
 }

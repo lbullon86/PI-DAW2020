@@ -1,3 +1,7 @@
 button{
  width:100px
 }
+span{
+    color:red;
+    font-weight: bold;
+}

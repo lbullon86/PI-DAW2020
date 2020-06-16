@@ -1,37 +1,38 @@
 <div class="fluid" fxLayout="column" fxLayoutAlign="center" fxLayoutGap.xs="0">
     <app-diario>
     </app-diario>
-    <section class="example-section">
-        Solo Activos
-        <mat-slide-toggle class="example-margin" [(ngModel)]="active" (change)="filter()">
-        </mat-slide-toggle>
-    </section>
-    <section class="example-section">
-        Pendientes Pago
-        <mat-slide-toggle class="example-margin" [(ngModel)]="pendientes" (change)="filter()">
-        </mat-slide-toggle>
-    </section>
-            <mat-form-field class="filtro">
-                <mat-label class="filtering">Filtrar...</mat-label>
-                <input matInput (keyup)="applyFilter($event)" placeholder="Filtrar...">
-            </mat-form-field>
-        
-            <table mat-table [dataSource]="clients | async" class="mat-elevation-z8">
-                <ng-container matColumnDef="nameClient">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> NOMBRE </th>
-                    <td [routerLink]="['/detailClient',element.idClient]" mat-cell *matCellDef="let element"> {{element.nameClient}} </td>
-                </ng-container>
-                <ng-container matColumnDef="surnameClient">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> APELLIDOS </th>
-                    <td [routerLink]="['/detailClient',element.idClient]" mat-cell *matCellDef="let element"> {{element.surnameClient}} </td>
-                </ng-container>
-                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayedColumns;">
-                </tr>
-            </table>
-            <a class ="button" mat-raised-button color="primary" (click)="openDialog()">Añadir nuevo cliente</a>
+    <div class="filtros">
+        <mat-form-field  class="filtro">
+            <mat-label class="filtering">Buscar...</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Buscar...">
 
-   
+        </mat-form-field>
+                <mat-checkbox class="example-margin" [(ngModel)]="pendientes" (change)="filter()">Pendientes</mat-checkbox>
+                <mat-checkbox class="example-margin" [(ngModel)]="active" (change)="filter()">Activos</mat-checkbox>
+     
+    </div>
+
+
+    <table mat-table [dataSource]="clients | async" class="mat-elevation-z8">
+        <ng-container matColumnDef="nameClient">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> NOMBRE </th>
+            <td [routerLink]="['/detailClient',element.idClient]" mat-cell *matCellDef="let element">
+                {{element.nameClient}} </td>
+        </ng-container>
+        <ng-container matColumnDef="surnameClient">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> APELLIDOS </th>
+            <td [routerLink]="['/detailClient',element.idClient]" mat-cell *matCellDef="let element">
+                {{element.surnameClient}} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+        </tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+    <a class="button" mat-raised-button color="primary" (click)="openDialog()">Añadir nuevo cliente</a>
+
+
 
 
 </div>

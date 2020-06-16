@@ -12,6 +12,7 @@ import { ExpensesComponent } from '../expenses.component';
 })
 export class InsertExpenseComponent implements OnInit {
   expense:Expense = new Expense();
+  error:string
   constructor(
     private serviceExpense:ExpensesService,
     public dialogRef: MatDialogRef<ExpensesComponent>,
@@ -22,7 +23,8 @@ export class InsertExpenseComponent implements OnInit {
   }
 
   saveExpense(){
-    return this.serviceExpense.save(this.expense).subscribe(expenses => this.dialogRef.close(this.dialogRef));
+    return this.serviceExpense.save(this.expense).subscribe(expenses => this.dialogRef.close(this.dialogRef),
+    err=> this.error = "Uno de los datos está incompleto o mal");
   }
 
 

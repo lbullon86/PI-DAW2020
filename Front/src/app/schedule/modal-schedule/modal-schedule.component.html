@@ -5,7 +5,6 @@
         
     </ng-container>
     <ng-template #elseChart>
-        {{activity.id}}
         <h1 style="text-align: center">
                 Nueva Actividad</h1>
             <mat-grid-list cols="2" rows="5" rowHeight="3:1">
@@ -53,11 +52,11 @@
                 </mat-grid-tile>
             
                 <mat-grid-tile colspan="1">
-                    <button mat-raised-button color="primary" >Añadir</button>
+                    <button mat-raised-button color="primary" (click)="updating()">Añadir</button>
                 </mat-grid-tile>
                 <mat-grid-tile colspan="1">
                     <button mat-button >No Thanks</button>
                 </mat-grid-tile>
                 </mat-grid-list>
-        
+        <span>{{error}}</span>
     </ng-template>

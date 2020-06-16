@@ -31,11 +31,21 @@ export class ScheduleController {
     /**
      * Get one class of given day
      * @param day 
-     * @returns Scheduel[] of one given day
+     * @returns Schedule[] of one given day
      */
     @Get('/:id')
     getOneDay(@Param('id', ParseIntPipe) day: number) {
         return this.scheduleService.getOneDay(day);
+
+    }
+
+    /**
+     * Get one class by id
+     * @param day 
+     */
+    @Get('/:id/class')
+    getOne(@Param('id', ParseIntPipe) id: number) {
+        return this.scheduleService.getOne(id);
 
     }
 
