@@ -3,16 +3,15 @@
 <mat-grid-list cols="2" rows="5" rowHeight="2.5:1">
     <mat-grid-tile colspan="1">
         <div class="example-container">
-            <mat-form-field appearance="fill">
+            <mat-form-field class="pad" appearance="fill">
                 <mat-label>Nombre</mat-label>
                 <input matInput [(ngModel)]="client.nameClient">
             </mat-form-field>
         </div>
     </mat-grid-tile>
-    <mat-grid-tile colspan="1">
-
+    <mat-grid-tile colspan="1" col>
         <div class="example-container">
-            <mat-form-field appearance="fill">
+            <mat-form-field class="pad" appearance="fill">
                 <mat-label>Apellidos</mat-label>
                 <input matInput [(ngModel)]="client.surnameClient">
             </mat-form-field>
@@ -20,7 +19,7 @@
     </mat-grid-tile>
     <mat-grid-tile colspan="1">
         <div class="example-container">
-            <mat-form-field appearance="fill">
+            <mat-form-field class="pad" appearance="fill">
                 <mat-label>Dni</mat-label>
                 <input matInput [(ngModel)]="client.dniClient">
             </mat-form-field>
@@ -29,7 +28,7 @@
     </mat-grid-tile>
     <mat-grid-tile colspan="1">
         <div class="example-container">
-            <mat-form-field appearance="fill">
+            <mat-form-field class="pad" appearance="fill">
                 <mat-label>Dirección</mat-label>
                 <input matInput [(ngModel)]="client.addressClient">
             </mat-form-field>
@@ -37,7 +36,7 @@
     </mat-grid-tile>
     <mat-grid-tile colspan="1">
         <div class="example-container">
-            <mat-form-field appearance="fill">
+            <mat-form-field class="pad" appearance="fill">
                 <mat-label>Email</mat-label>
                 <input matInput [(ngModel)]="client.emailClient">
             </mat-form-field>
@@ -45,7 +44,7 @@
     </mat-grid-tile>
     <mat-grid-tile colspan="1">
         <div class="example-container">
-            <mat-form-field appearance="fill">
+            <mat-form-field class="pad" appearance="fill">
                 <mat-label>Teléfono</mat-label>
                 <input matInput [(ngModel)]="client.phoneClient">
             </mat-form-field>
@@ -61,7 +60,7 @@
         </section>
     </mat-grid-tile>
     <mat-grid-tile colspan="1">
-        <mat-form-field>
+        <mat-form-field class="pad">
             <mat-label>Choose a date</mat-label>
             <input matInput [matDatepicker]="picker" [(ngModel)]="client.birthDateClient">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -69,10 +68,10 @@
         </mat-form-field>
     </mat-grid-tile>
     <mat-grid-tile colspan="1">
-        <button class="button" (click)="addUser()" mat-raised-button color="primary">Añadir</button>
+        <button (click)="addUser()" class="bluebutton" mat-flat-button color="primary" >Añadir</button>
     </mat-grid-tile>
     <mat-grid-tile colspan="1">
-        <button mat-button (click)="closeWindow()">No Thanks</button>
+        <button class="whiteButton" mat-flat-button (click)="closeWindow()">Cancelar</button>
     </mat-grid-tile>
 </mat-grid-list>
 <span>{{error}}</span>

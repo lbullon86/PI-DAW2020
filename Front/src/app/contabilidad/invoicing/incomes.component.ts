@@ -59,11 +59,11 @@ export class IncomesComponent implements OnInit {
     this.dataTotal = [
       {
         name: "Caja Empresa",
-        value: this.account.sum
+        value: this.account.sum +"€"
       },
       {
         name: "Caja Impuestos",
-        value: this.account.sumTax
+        value: this.account.sumTax+ "€"
       }
     ];
     this.dataInvoicing = [

@@ -119,7 +119,7 @@ export class ExpensesService {
 
         break;
       case 2:
-        for (let index = 3; index < 7; index++) {
+        for (let index = 4; index < 7; index++) {
           QueryResult =  await this.getSumAllExpensesOneMonth(year, index);
           QueryResult.month = index;
           allMonths.push(QueryResult);
@@ -128,7 +128,7 @@ export class ExpensesService {
         break;
 
       case 3:
-        for (let index = 6; index < 10; index++) {
+        for (let index = 7; index < 10; index++) {
           QueryResult = await this.getSumAllExpensesOneMonth(year, index);
           QueryResult.month = index;
           allMonths.push(QueryResult);

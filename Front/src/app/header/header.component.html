@@ -1,6 +1,12 @@
 <nav mat-tab-nav-bar mat-align-tabs="center" fxLayout="row" fxLayoutAlign="space-between center">
-    <a mat-tab-link [routerLink]="['/home']" routerLinkActive [routerLinkActiveOptions]="{exact: true}" #rla="routerLinkActive" [active]="rla.isActive"> HOME </a>
-    <a mat-tab-link [routerLink]="['/clientes']" routerLinkActive [routerLinkActiveOptions]="{exact: true}" #rlaCli="routerLinkActive" [active]="rlaCli.isActive"> CLIENTES </a>
-    <a mat-tab-link [routerLink]="['/contabilidad']" routerLinkActive [routerLinkActiveOptions]="{exact: true}" #rlaCont="routerLinkActive" [active]="rlaCont.isActive"> CONTABILIDAD </a>
-    <img fxLayoutAlign="end" class="avatar" src='../../assets/power.png' (click)="logout()">
+    <div >
+        <a mat-tab-link [routerLink]="['/home']" routerLinkActive [routerLinkActiveOptions]="{exact: true}"
+            #rla="routerLinkActive" [active]="rla.isActive"> HOME </a>
+        <a mat-tab-link [routerLink]="['/clientes']" routerLinkActive [routerLinkActiveOptions]="{exact: true}"
+            #rlaCli="routerLinkActive" [active]="rlaCli.isActive"> CLIENTES </a>
+        <a mat-tab-link [routerLink]="['/contabilidad']" routerLinkActive [routerLinkActiveOptions]="{exact: true}"
+            #rlaCont="routerLinkActive" [active]="rlaCont.isActive"> CONTABILIDAD </a>
+        <img fxLayoutAlign="end" class="avatar" src='../../assets/power.png' (click)="logout()">
+
+    </div>
 </nav>
