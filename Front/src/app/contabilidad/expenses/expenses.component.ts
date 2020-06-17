@@ -23,7 +23,7 @@ export class ExpensesComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   numero: number = null;
   controller: boolean = true;
-  controllerConcept:boolean = true;
+  controllerConcept:boolean = false;
   months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   monthSelected: number;
   data = []
@@ -84,7 +84,6 @@ export class ExpensesComponent implements OnInit {
       this.changeController();
 
     }
-
 
     getYearByConcept(){
       this.expenseService.getYearByConcept(this.yearSelected)

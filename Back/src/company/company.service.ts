@@ -9,8 +9,10 @@ export class CompanyService {
     constructor(@InjectRepository(Company) private readonly repository:Repository<Company>){
 
     }
-    getAll() {
-        return this.repository.find();
+    async getAll(): Promise<Company>{
+        const company = await this.repository.find()
+        console.log(company[0])
+        return company[0] ;
     }
 
     /**

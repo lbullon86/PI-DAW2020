@@ -32,8 +32,8 @@ export class DiarioComponent implements OnInit {
 
   modalUpdate(activity: Activity) {
     const dialogRef = this.dialog.open(UpdateScheduleComponent, {
-      width: "150px",
-      height: "150px",
+      width: "450px",
+      height: "450px",
       data: { id: activity.id }
     });
     dialogRef.afterClosed().subscribe(week => this.getDay());

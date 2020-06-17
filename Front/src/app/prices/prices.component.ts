@@ -17,6 +17,7 @@ export class PricesComponent implements OnInit {
   prices:Observable<MatTableDataSource<any>>;
   priceData:MatTableDataSource<any>;
   displayedColumns: string[] = ['name', 'price'];  
+  error:string;
   public price:Prices;
   themeAdd:boolean;
 
@@ -42,6 +43,6 @@ export class PricesComponent implements OnInit {
   }
 
   addPrice(){
-    return this.priceService.save(this.price).subscribe(price => this.dialogRef.close(this.dialogRef) )
+    return this.priceService.save(this.price).subscribe(price => this.dialogRef.close(this.dialogRef), err=> this.error ="*Alguno de los parametros no es correcto" )
   }
 }

@@ -12,6 +12,7 @@
 cd Back
 npm run build
 cp package.json ./dist/
+cp prod.env ./dist/.env
 cd ../Front
 npm run build:pro
 mv dist ../Back/dist/frontend

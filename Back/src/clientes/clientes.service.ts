@@ -45,7 +45,11 @@ async getInvoices(id:number):Promise<Invoice[]>{
      const client = await this.repositoryClients.findOne(id, {relations:["invoices"]});
      return client.invoices;
 }
-
+ 
+/**
+ * Get all clients are actives
+ * @returns Clients[]
+ */
 async getActives(){
     return this.repositoryClients.createQueryBuilder("client")
     .select("client")
@@ -74,7 +78,6 @@ async saveInvoice(id:number, invoice: Invoice): Promise<Invoice> {
     const client = await this.repositoryClients.findOne(id, {relations:["invoices"]});
     client.invoices.push(invoice);
     await this.repositoryClients.save(client);
-    console.log(invoice)
     return invoice;
 }
 /**

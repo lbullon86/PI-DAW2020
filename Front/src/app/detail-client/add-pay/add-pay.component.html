@@ -1,5 +1,5 @@
 <h1 style="text-align: center">{{client.nameClient}}</h1>
-<mat-grid-list cols="2" rows="5" rowHeight="4:1">
+<mat-grid-list cols="2" rows="5" rowHeight="3:1">
     <mat-grid-tile colspan="1">
         <mat-form-field>
             <mat-label>Concepto</mat-label>
@@ -74,3 +74,4 @@
         <button class="whiteButton" mat-flat-button  (click)="closeWindow()">Borrar Pago</button>
     </mat-grid-tile>
 </mat-grid-list>
+<span>{{error}}</span>

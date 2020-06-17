@@ -11,7 +11,7 @@ export class CompanyController {
      * @return Company, all information of company
      */
     @Get()
-    getAll(): Promise<any[]>{
+    getAll(): Promise<Company>{
         return this.companyService.getAll();
     }
 

@@ -1,8 +1,9 @@
 <ng-container *ngIf="parameter; else elseChart">
+    <div fxLayoutAlign="center center">
         <button mat-raised-button color="warn" (click)="delete()">Borrar</button>
 
         <button mat-raised-button color="primary" (click)="update()">Modificar</button>
-        
+    </div>
     </ng-container>
     <ng-template #elseChart>
         <h1 style="text-align: center">

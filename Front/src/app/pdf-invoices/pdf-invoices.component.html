@@ -3,7 +3,7 @@
 
         <h2>Facturas</h2>
 
-        <table mat-table [dataSource]="invoices | async" class="mat-elevation-z8">
+        <table  *ngIf="invoices" mat-table [dataSource]="invoices" class="mat-elevation-z8">
             <ng-container matColumnDef="idInvoice">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Nº Factura </th>
                 <td mat-cell *matCellDef="let element">

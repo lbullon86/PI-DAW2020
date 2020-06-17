@@ -13,3 +13,7 @@ table{
     border: solid 2px #12263a;
     margin:2px;
 }
+span{
+    color:red;
+    font-weight: bold;
+}

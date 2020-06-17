@@ -64,11 +64,12 @@ export class AddPayComponent implements OnInit {
     this.pay.concept = this.priceSelected.name;
     this.pay.client = this.client;
     this.pay.taxes = 21;   
+    
       this.priceService
         .savePay(this.pay)
         .subscribe(
           addPay =>{this.dialogRef.close(this.dialogRef)},
-          err =>  this.error= "* Uno de los datos es incorrecto"
+          err =>  this.error= "*Uno de los datos es incorrecto"
 
         );    
   }

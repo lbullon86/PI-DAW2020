@@ -34,15 +34,7 @@
     </div>
     <div fxFlex="33">
         <div fxLayout="column">
-            <section fxFlex="100" class="example-section">
-                <section fxFlex="100" class="example-section">
-                    <mat-radio-group aria-label="Selecciona " [(ngModel)]="controllerConcept">
-                        <mat-radio-button [value]="true">Clases</mat-radio-button>
-                        <mat-radio-button [value]="false">Método de pago</mat-radio-button>
-                    </mat-radio-group>
-                </section>
-
-            </section>
+<!-- 
             <ng-container *ngIf="controllerConcept; else panelClass">
 
                 <mat-accordion fxFlex="100" class="example-headers-align">
@@ -106,8 +98,7 @@
                 <ng-container *ngIf="!controller">
                     <button (click)="addPay()" mat-raised-button color="primary">Añadir gasto</button>
                     </ng-container>
-            </ng-container>
-            <ng-template #panelClass>
+            </ng-container> -->
                 <mat-accordion fxFlex="100" class="example-headers-align">
                     <mat-expansion-panel hideToggle>
                         <mat-expansion-panel-header>
@@ -171,6 +162,5 @@
                 <ng-container *ngIf="!controller">
                 <button (click)="addPay()" mat-raised-button color="primary">Añadir gasto</button>
                 </ng-container>
-            </ng-template>
 
         </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { InvoicesService } from "./invoices.service";
 import { Observable } from "rxjs";
 import { Pay } from "../detail-client/add-pay/pay-model";
@@ -14,16 +14,17 @@ import { DatePipe } from '@angular/common';
   templateUrl: "./invoices.component.html",
   styleUrls: ["./invoices.component.css"]
 })
-export class InvoicesComponent implements OnInit {
+export class InvoicesComponent  {
   invoicesObservable: Observable<Pay[]>;
-  invoices: Observable<MatTableDataSource<Pay>>;
+  @Input()
+  invoices: Observable<Pay[]>;
   displayedColumns: string[] = ["dateInvoice", "concept", "quantity"];
   idClient: number;
   client: Observable<Client>;
-
+  get invoicesData(): Observable<MatTableDataSource<Pay>>{
+    return this.invoices.pipe(map(data => new MatTableDataSource(data)));
+  }
   constructor(
-    private serviceClient: ClientesService,
-    private route: ActivatedRoute,
     private datepipe: DatePipe
   ) {
 
@@ -33,18 +34,7 @@ export class InvoicesComponent implements OnInit {
     return this.datepipe.transform(date, 'dd-MM-yyyy');
   }
 
-  ngOnInit() {
-    this.getInvoices()
-  }
+ 
 
-  getInvoices() {
-    this.invoices = this.route.paramMap.pipe(
-      switchMap((params: ParamMap) => {
-        this.idClient = +params.get("id");
-        return this.serviceClient
-          .getInvoicesOneClient(this.idClient)
-          .pipe(map(data => new MatTableDataSource(data)));
-      })
-    );
-  }
+
 }

@@ -12,7 +12,7 @@ import { InfoService } from './info.service';
 })
 export class InfoComponent implements OnInit {
   company:Company;
-
+  error:string;
   constructor(public dialogRef: MatDialogRef<UsersComponent>,public dialog :MatDialog,private companyService:InfoService) { 
     this.company = new Company()
     
@@ -20,12 +20,11 @@ export class InfoComponent implements OnInit {
 
   async ngOnInit(){
     await this.companyService.findAll().subscribe(company => this.company = company)
-    alert(this.company.name)
   }
 
 
   addCompany(){
-    return this.companyService.save(this.company).subscribe(company => this.dialogRef.close(this.dialogRef))
+    return this.companyService.save(this.company).subscribe(company => this.dialogRef.close(this.dialogRef), err=> this.error ="*Un campo es incorrecto")
   }
 
   closeWindow(){

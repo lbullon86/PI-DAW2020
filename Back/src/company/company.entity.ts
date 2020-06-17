@@ -1,4 +1,4 @@
-import {Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToMany, ManyToOne} from 'typeorm';
+import {Entity, Column, PrimaryGeneratedColumn, OneToMany} from 'typeorm';
 import { MinLength} from "class-validator";
 import { Clients } from 'src/clientes/clientes.entity';
 import { Users } from 'src/users/users.entity';
