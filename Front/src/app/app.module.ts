@@ -25,6 +25,9 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptorService } from  './core/http/token-interceptor.service';
 import { ContainerModule } from './container/container.module';
 import { UpdateScheduleModule } from './schedule/update-schedule/update-schedule.module';
+import { PdfInvoicesComponent } from './pdf-invoices/pdf-invoices.component';
+import { PdfInvoicesModule } from './pdf-invoices/pdf-invoices.module';
+
 
 @NgModule({
   declarations: [
@@ -53,7 +56,8 @@ import { UpdateScheduleModule } from './schedule/update-schedule/update-schedule
     PricesModule,
     MatFormFieldModule,
     InfoModule,
-    UpdateScheduleModule
+    UpdateScheduleModule,
+    PdfInvoicesModule
   ],
   providers: [DatePipe,
     {

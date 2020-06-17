@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { ResumeIncomesService } from "./resume-incomes.service";
 import { InvoicingClass } from "../invoicing/invoicingClass-model";
 import { Invoicing } from "../invoicing/invoicing-model";
+import { MatDialog } from '@angular/material/dialog';
+import { PdfInvoicesComponent } from 'src/app/pdf-invoices/pdf-invoices.component';
 
 @Component({
   selector: "app-resume-incomes",
@@ -24,7 +26,8 @@ export class ResumeIncomesComponent implements OnInit {
   monthSelected: number;
   parameter: boolean;
 
-  constructor(private serviceInvoicing: ResumeIncomesService) {
+  constructor(private serviceInvoicing: ResumeIncomesService, private dialog: MatDialog
+  ) {
     this.invoicingClass = new InvoicingClass();
     this.invoicinPayment = new Invoicing();
     this.date = new Date();
@@ -177,5 +180,14 @@ export class ResumeIncomesComponent implements OnInit {
         value: this.invoicinPayment.sumTransfer
       }
     ];
+  }
+
+  getPdf() {
+    let dialogRef = this.dialog.open(PdfInvoicesComponent, {
+      width: "450px",
+      height: "500px",
+
+    });
+    dialogRef.afterClosed().subscribe()
   }
 }

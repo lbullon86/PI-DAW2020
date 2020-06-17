@@ -52,4 +52,5 @@ export class ScheduleComponent implements OnInit {
     dialogRef.afterClosed().subscribe(week => this.getWeek());
 
   }
+  
 }

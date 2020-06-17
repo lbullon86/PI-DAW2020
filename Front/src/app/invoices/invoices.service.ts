@@ -17,4 +17,9 @@ export class InvoicesService {
   getInvoicesClient(id: number): Observable<Pay> {
     return this.http.get(`${this.url}/${id}`) as Observable <Pay>
   }
+
+  getInvoicesOneQuarter(month:number, year:number){
+    return this.http.get(`${this.url}/invoicesOneQuarter/${month}/${year}`) as Observable <Pay[]>
+
+  }
 }

@@ -12,7 +12,7 @@ export class InvoiceService {
   constructor(
     @InjectRepository(Invoice)
     private readonly repositoryInvoice: Repository<Invoice>,
-  ) {}
+  ) { }
 
   getAll() {
     return this.repositoryInvoice.find();
@@ -105,7 +105,7 @@ export class InvoiceService {
     return this.sortingInvoicingClass(invoicingMonths);
   }
 
-  async getDefaulters(): Promise<{[idClient:string]:number}[]>{
+  async getDefaulters(): Promise<{ [idClient: string]: number }[]> {
     const today = new Date();
     const invoices = await this.repositoryInvoice
       .createQueryBuilder('invoice')
@@ -113,7 +113,7 @@ export class InvoiceService {
       .where(
         'date(invoice.startDate) <=:date AND date(invoice.expirationDate) >=:date',
         { date: today },
-      ) .getRawMany(); 
+      ).getRawMany();
     return invoices;
   }
 
@@ -294,7 +294,7 @@ export class InvoiceService {
       //Valor inicial del reduce
       {},
     )
-    return new InvoicingClass(invoicing);    
+    return new InvoicingClass(invoicing);
   }
 
   getIsNull(number: any) {
@@ -746,5 +746,64 @@ export class InvoiceService {
     }
 
     return invoicing;
+  }
+
+
+  async getInvoicesOneQuarter(id: number, year: number) {
+    switch (id) {
+      case 1:
+        return this.repositoryInvoice.createQueryBuilder('invoice')
+          .select('invoice')
+          .where(
+            'year(invoice.dateInvoice)=:date1 AND month(invoice.dateInvoice) between :month1 AND :month2',
+            {
+              month1: 1,
+              month2: 3,
+              date1: year,
+            },
+          )
+          .getRawMany();
+      case 2:
+        return this.repositoryInvoice.createQueryBuilder('invoice')
+          .select('invoice')
+          .where(
+            'year(invoice.dateInvoice)=:date1 AND month(invoice.dateInvoice) between :month1 AND :month2',
+            {
+              month1: 3,
+              month2: 6,
+              date1: year,
+            },
+          )
+          .getMany();
+      case 3:
+        return this.repositoryInvoice.createQueryBuilder('invoice')
+          .select('invoice')
+          .where(
+            'year(invoice.dateInvoice)=:date1 AND month(invoice.dateInvoice) between :month1 AND :month2',
+            {
+              month1: 7,
+              month2: 9,
+              date1: year,
+            },
+          )
+          .getRawMany();
+
+      case 4:
+        return this.repositoryInvoice.createQueryBuilder('invoice')
+          .select('invoice')
+          .where(
+            'year(invoice.dateInvoice)=:date1 AND month(invoice.dateInvoice) between :month1 AND :month2',
+            {
+              month1: 10,
+              month2: 12,
+              date1: year,
+            },
+          )
+          .getRawMany();
+      default:
+        break;
+    }
+
+
   }
 }

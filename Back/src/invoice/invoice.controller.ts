@@ -209,6 +209,14 @@ export class InvoiceController {
     return this.invoiceService.getInvoicingOneYearByMethodPayment(year);
   }
 
-
-
+/**
+ * Get All invoices of one quarter
+ * @param month 
+ * @param year 
+ * @returns Inoice[]
+ */
+  @Get('invoicesOneQuarter/:id/:year')
+  getInvoiceOneQuarter(@Param('id', ParseIntPipe) month: number, @Param('year', ParseIntPipe) year: number){
+    return this.invoiceService.getInvoicesOneQuarter(month,year)
+  }
 }
