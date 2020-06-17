@@ -1,3 +1,15 @@
 table{
     width: 100%;
 }
+.bluebutton{
+    background-color: #4179f2;
+    height: 52px;
+    margin:2px;
+    width: 100%;
+}
+
+.whiteButton{
+    height: 52px;
+    border: solid 2px #12263a;
+    margin:2px;
+}

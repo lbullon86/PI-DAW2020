@@ -67,7 +67,7 @@ export class AddPayComponent implements OnInit {
       this.priceService
         .savePay(this.pay)
         .subscribe(
-          addPay => this.dialogRef.close(this.dialogRef),
+          addPay =>{this.dialogRef.close(this.dialogRef)},
           err =>  this.error= "* Uno de los datos es incorrecto"
 
         );    

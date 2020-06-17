@@ -18,8 +18,8 @@ export class InfoComponent implements OnInit {
     
   }
 
-  ngOnInit(){
-    this.companyService.findAll().subscribe(company => this.company = company)
+  async ngOnInit(){
+    await this.companyService.findAll().subscribe(company => this.company = company)
     alert(this.company.name)
   }
 

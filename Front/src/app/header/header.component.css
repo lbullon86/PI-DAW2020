@@ -12,7 +12,15 @@ nav{
     text-decoration: none;
 }
 
-img{
-    width: 26px;
-    height: 26px;
+#work{
+    width: 24px;
+    height: 24px;
+    margin:8px;
+    top: calc(50% - 18px);
+
+  
+}
+.buttons{
+    position: absolute;
+    right: 16px;
 }
